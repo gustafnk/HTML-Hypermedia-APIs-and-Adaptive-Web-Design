@@ -93,175 +93,246 @@
         </section>
 
         <section>
-        <h2>Use HTML for Hypermedia APIs</h2>
-        <ul style="list-style-type: none; margin-top: 100px">
-          <li>Lots and lots of hypermedia controls (affordances)</li>
-          <li>Old, standardized, everybody knows HTML</li>
-          <li>Good tooling support</li>
-        </ul>
-        <div style="float: right; text-align: right">
+        <h2>What is the Hypermedia Constraint?</h2>
+        <div style="margin-top: 100px">
+          <blockquote>You do stuff by reading pages <br />and then either <br />follow links or submit forms.</blockquote>
+          <p style="float: right;">— Jon Moore<br /><br /><br />
           <img src="images/jon_moore.png" />
-          <small style="float: right;"><a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a></small></div>
-        </section>
-
-        <section>
-        <h2>Client support for HTML?</h2>
-        <ul class="fragment" style="list-style-type: none; margin-top: 100px">
-          <li>Mixed experiences on mobile devices...</li>
-          <li class="fragment">...but all mobile devices have a web browser!</li>
-        </ul>
-        </section>
-
-        <section>
-        <h2>Use the browser as the API layer</h2>
-        <ul style="text-align: center; list-style-type: none; margin-top: 100px">
-          <li>Still experimental</li>
-          <li>Good HTTP behavior by default</li>
-        </ul>
-        </section>
-
-        <section>
-        <h2>The aesthetics of modernism</h2>
-        <ul style="text-align: center; list-style-type: none; margin-top: 100px">
-          <li>Bricolage (DIY)</li>
-        </ul>
-        <!-- Entrepreneur, startups, etc -->
-        </section>
-
-        <section>
-        <h2>A common goal</h2>
-        <p style="margin-top: 100px">Mobile first <span style="font-size: 2em; margin: 10px;">&cap;</span> HTML Hypermedia APIs<div style="font-size: 2em; margin: 20px;">=</div>Minimalistic HTML</p>
-        </section>
-
-        <section>
-        <h2>[Primary] Content first</h2>
-        <ul style="list-style-type: none">
-          <li>What is the most important content?</li>
-          <li>Both a design principle and a run-time strategy</li>
-        </ul>
-        <br /><br />TODO Image
-        </section>
-
-        <section>
-        <h2>The API and the web <br />can be the same thing!</h2>
-        <p>HTML Hypermedia APIs + Content First</p>
-        </section>
-
-        <section>
-        <h2>A really fine-grained web site</h2>
-        <p>Solve with Adaptive Web Design</p>
-        </section>
-
-        <section>
-        <h2>Adaptive Web Design</h2>
-        <p>TODO Word cloud</p>
-        <p>TODO http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</p>
-        </section>
-
-        <section>
-        <h2>Progressive Enhancement</h2>
-        <div>
-          <blockquote>An escalator can never break;<br /> it can only become stairs</blockquote>
-          <p style="float: right;">— Mitch Hedberg</p></div>
-        <div style="clear: both" />
-          <img src="images/escalator.jpg" style="width: 300px; margin: 0 auto" />
+          </p></div>
+          <div style="float: right; text-align: right">
+          </div>
           </section>
 
           <section>
-          <h2>HTML Hypermedia APIs + AWD</h2>
-          <p></p>
+          <h2>Use HTML for Hypermedia APIs</h2>
+          <ul style="list-style-type: none; margin-top: 100px">
+            <li>Lots and lots of hypermedia controls (affordances)</li>
+            <li>Old, standardized, everybody knows HTML</li>
+            <li>Good tooling support</li>
+          </ul>
+          <div style="float: right; text-align: right">
+            <img src="images/jon_moore.png" />
+            <small style="float: right;"><a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a></small></div>
           </section>
 
           <section>
-          <h2>High level view</h2>
-          <p>TODO Image</p>
+          <h2>More good stuff</h2>
+          <ul style="list-style-type: none; margin-top: 30px">
+            <li>Browsable API (QA, devops)</li>
+            <li>Great for learning about hypermedia</li>
+            <li>Microformats 2, RDFa Lite</li>
+          </ul>
           </section>
 
           <section>
-          <h2>An exit strategy</h2>
-          <p><img src="images/exit.png" /></p>
-          <p>www.example.com<br />api.example.com</p>
+          <h2>Client support for HTML?</h2>
+          <ul class="fragment" style="list-style-type: none; margin-top: 100px">
+            <li>Mixed experiences on mobile devices...</li>
+            <li class="fragment">...but all mobile devices have a web browser!</li>
+          </ul>
           </section>
 
           <section>
-          <h2>Summary</h2>
-          <p></p>
+          <h2>Use the browser as the API layer</h2>
+          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
+            <li>Still experimental</li>
+            <li>Good HTTP behavior by default</li>
+          </ul>
           </section>
 
           <section>
-          <h2>Two problems</h2>
-          <p>
-          No application logic in API clients
-          <i> =&gt; Hypermedia APIs</i>
-          </p>
-          <p>
-          Multi-device web
-          <i>  =&gt; Adaptive Web Design</i>
-          </p>
+          <h2>Example: Microformats2 style</h2>
+          <pre><code>
+&lt;li class="h-item item"&gt;
+  &lt;div class="p-title title"&gt;&lt;%= item.title %&gt;&lt;/div&gt;
+  &lt;div class="p-status status"&gt;&lt;%= item.status %&gt;&lt;/div&gt;
+  &lt;div class="p-description description"&gt;&lt;%= item.description %&gt;&lt;/div&gt;
+  &lt;div class="actions"&gt;
+    &lt;%= render :partial =&gt; "actions" %&gt;
+  &lt;/div&gt;
+  &lt;div class="links"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/li&gt;
+          </code></pre>
           </section>
 
           <section>
-          <h2>High level view</h2>
-          <p>TODO Image</p>
+          <h2>Workflow definition</h2>
+          <pre><code>
+            class Item
+              def next_states
+                case self.status
+                when 'backlog'
+                  ['working']
+                when 'working'
+                  ['backlog', 'verify']
+                when 'verify'
+                  ['working', 'done']
+                when 'done'
+                  ['working']
+                end
+              end
+            end
+          </code></pre>
+          </section>
+
+
+          <!--<section>
+          <h2>The aesthetics of modernism</h2>
+          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
+            <li>Bricolage (DIY)</li>
+          </ul>
+          Entrepreneur, startups, etc 
+          </section>-->
+
+          <section>
+          <h2>A common goal</h2>
+          <p style="margin-top: 100px">Mobile first <span style="font-size: 2em; margin: 10px;">&cap;</span> HTML Hypermedia APIs<div style="font-size: 2em; margin: 20px;">=</div>Minimalistic HTML</p>
           </section>
 
           <section>
-          <h2>Further exploration, books</h2>
-          <p>TODO Amundsen, Gustafson</p>
+          <h2>[Primary] Content first</h2>
+          <ul style="list-style-type: none">
+            <li>What is the most important content?</li>
+            <li>Both a design principle and a run-time strategy</li>
+            <li>"Agressive Enhancement""</li>
+          </ul>
+          <small style="float: right; text-align: right; margin-top: 50px">
+        
+          <a href="http://adactio.com/journal/4523/">http://adactio.com/journal/4523/</a>
+        </small>
           </section>
 
           <section>
-          <h2>Further exploration, online</h2>
-          <p>TODO Klabnik, Frost, Zakas, ROCA</p>
+          <img src="images/not_the_thing1.png" />
+          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
           </section>
 
           <section>
-          <h2>Questions?</h2>
-          <p></p>
+          <img src="images/not_the_thing2.png" />
           </section>
 
           <section>
-          <h1>THE END</h1>
-          <p>
-          <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
-          </p>
+          <h2>The API and the web <br />can be the same thing!</h2>
+          <p>HTML Hypermedia APIs + Content First</p>
           </section>
+
+          <section>
+          <h2>A "just enough" fine-grained web site</h2>
+          <p>Solve with Adaptive Web Design</p>
+          </section>
+
+          <section>
+          <h2>Adaptive Web Design</h2>
+          <p>TODO Word cloud</p>
+          <p>TODO http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</p>
+          </section>
+
+          <section>
+          <h2>Progressive Enhancement</h2>
+          <div>
+            <blockquote>An escalator can never break;<br /> it can only become stairs</blockquote>
+            <p style="float: right;">— Mitch Hedberg</p></div>
+          <div style="clear: both" />
+            <img src="images/escalator.jpg" style="width: 300px; margin: 0 auto" />
+            </section>
+
+            <section>
+            <h2>HTML Hypermedia APIs + AWD</h2>
+            <p></p>
+            </section>
+
+            <section>
+            <h2>High level view</h2>
+            <p>TODO Image</p>
+            </section>
+
+            <section>
+            <h2>An exit strategy</h2>
+            <p><img src="images/exit.png" /></p>
+            <p>www.example.com<br />api.example.com</p>
+            </section>
+
+            <section>
+            <h2>Summary</h2>
+            <p></p>
+            </section>
+
+            <section>
+            <h2>Two problems</h2>
+            <p>
+            No application logic in API clients
+            <i> =&gt; Hypermedia APIs</i>
+            </p>
+            <p>
+            Multi-device web
+            <i>  =&gt; Adaptive Web Design</i>
+            </p>
+            </section>
+
+            <section>
+            <h2>High level view</h2>
+            <p>TODO Image</p>
+            </section>
+
+            <section>
+            <h2>Further exploration, books</h2>
+            <p>TODO Amundsen, Gustafson</p>
+            </section>
+
+            <section>
+            <h2>Further exploration, online</h2>
+            <p>TODO Klabnik, Frost, Zakas, ROCA</p>
+            </section>
+
+            <section>
+            <h2>Questions?</h2>
+            <p></p>
+            </section>
+
+            <section>
+            <h1>THE END</h1>
+            <p>
+            <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
+            </p>
+            </section>
+
+          </div>
 
         </div>
 
-      </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
 
-      <script src="lib/js/head.min.js"></script>
-      <script src="js/reveal.min.js"></script>
+        <script>
 
-      <script>
+          // Full list of configuration options available here:
+          // https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
 
-        // Full list of configuration options available here:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-          controls: true,
-          progress: true,
-          history: true,
-          center: true,
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-          transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'plugin/leap/leap.js', async: true }
+            // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+          });
 
-          // Optional libraries used to extend on reveal.js
-          dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-          // { src: 'plugin/leap/leap.js', async: true }
-          // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-          ]
-        });
+        </script>
 
-      </script>
-
-    </body>
-  </html>
+      </body>
+    </html>
