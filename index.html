@@ -107,25 +107,26 @@
           <section>
           <h2>Use HTML for Hypermedia APIs</h2>
           <ul style="list-style-type: none; margin-top: 100px">
-            <li>Lots and lots of hypermedia controls (affordances)</li>
+            <li>Lots of hypermedia controls (affordances)</li>
             <li>Old, standardized, everybody knows HTML</li>
             <li>Good tooling support</li>
           </ul>
           <div style="float: right; text-align: right">
             <img src="images/jon_moore.png" />
             <small style="float: right;">
-              <a href="TODO">http://todo/oredev/video</a>
+              <a href="https://vimeo.com/20781278">https://vimeo.com/20781278</a>
               <a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a>
           </small></div>
           </section>
 
           <section>
           <h2>More good stuff</h2>
-          <ul style="list-style-type: none; margin-top: 30px">
+          <ul style="list-style-type: none; margin: 30px 0">
             <li>Browsable API (QA, devops)</li>
-            <li>Great for learning about hypermedia</li>
+            <li>Great for learning about hypermedia!</li>
             <li>Microformats 2, RDFa Lite</li>
           </ul>
+          <small><a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br /><a href="http://www.w3.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a></small>
           </section>
 
           <section>
@@ -137,27 +138,43 @@
           </section>
 
           <section>
-          <h2>Use the browser as the API layer</h2>
+          <h2>Use the browser for API communication</h2>
           <ul style="text-align: center; list-style-type: none; margin-top: 100px">
             <li>Still experimental</li>
-            <li>Good HTTP behavior by default</li>
+            <li>Good HTTP behavior for free</li>
           </ul>
           </section>
 
           <section>
-          <h2>Example: Microformats2 style</h2>
+          <h2>Example: Microformats2, entities</h2>
           <pre><code>
 &lt;li class="h-item"&gt;
   &lt;div class="p-title"&gt;&lt;%= item.title %&gt;&lt;/div&gt;
   &lt;div class="p-status"&gt;&lt;%= item.status %&gt;&lt;/div&gt;
   &lt;div class="p-description"&gt;&lt;%= item.description %&gt;&lt;/div&gt;
   &lt;div class="actions"&gt;
-    &lt;%= render :partial =&gt; "actions" %&gt;
+    ...
   &lt;/div&gt;
   &lt;div class="links"&gt;
     ...
   &lt;/div&gt;
 &lt;/li&gt;
+          </code></pre>
+          </section>
+
+          <section>
+          <h2>Example: Microformats2, forms</h2>
+          <pre><code>
+&lt;div class="actions"&gt;
+  &lt;form class="move backlog" action="/items/backlog" method="POST"&gt;
+    &lt;input name="id" type="hidden" value="4"&gt;
+    &lt;input title="submit" type="submit" value="Move to backlog"&gt;
+  &lt;/form&gt;
+  &lt;form class="move verify next" action="/items/verify" method="POST"&gt;
+    &lt;input name="id" type="hidden" value="4"&gt;
+    &lt;input title="submit" type="submit" value="Move to verify"&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
           </code></pre>
           </section>
 
@@ -196,6 +213,7 @@
           <p style="margin-top: 100px">Mobile first <span style="font-size: 2em; margin: 10px;">&cap;</span> HTML Hypermedia APIs<div style="font-size: 2em; margin: 20px;">=</div>Minimalistic HTML</p>
           </section>
 
+          <!-- let's start looking at mobile web design -->
           <section>
           <h2>[Primary] Content first</h2>
           <ul style="list-style-type: none">
@@ -216,22 +234,22 @@
 
           <section>
           <img src="images/not_the_thing2.png" />
+          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
           </section>
+
+          <section>Do you see it? :)</section>
+
 
           <section>
           <h2>The API and the web <br />can be the same thing!</h2>
-          <p>HTML Hypermedia APIs + Content First</p>
-          </section>
-
-          <section>
-          <h2>A "just enough" fine-grained web site</h2>
-          <p>Solve with Adaptive Web Design</p>
+          <p style="margin-top: 100px">HTML Hypermedia APIs <br /> + <br /> Content First <br /> + <br /> Agressive Enhancement</p>
           </section>
 
           <section>
           <h2>Adaptive Web Design</h2>
-          <p>TODO Word cloud</p>
-          <p>TODO http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</p>
+          <p style="margin: 50px">The tip of the iceberg ---&gt; Responsive web design</p>
+          <p>Feature detection<br />RWD with server-side components<br />Device APIs<br /> Performance<br />Conditional loading<br />Content strategy<br />HTML5<br />Touch<br />Platform optimization<br />Ergonomics<br />...</p>
+          <p style="margin-top: 50px"><small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</a></small></p>
           </section>
 
           <section>
@@ -257,6 +275,17 @@
             <h2>An exit strategy</h2>
             <p><img src="images/exit.png" /></p>
             <p>www.example.com<br />api.example.com</p>
+            </section>
+
+            <section>
+            <h2>One more thing....</h2>
+            <p>JSON is ok :)</p>
+            </section>
+
+            <section>
+            <h2>Changing the application</h2>
+            <!-- change the workflow rules -->
+            <!-- add a column -->
             </section>
 
             <section>
