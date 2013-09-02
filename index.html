@@ -68,6 +68,7 @@
         <section>
         <h2>Demo, Kanban board</h2>
         <p>HTML Hypermedia API + Adaptive Web Design
+        <p><img src="images/workflow.png" /></p>
         </p>
         </section>
 
@@ -112,7 +113,10 @@
           </ul>
           <div style="float: right; text-align: right">
             <img src="images/jon_moore.png" />
-            <small style="float: right;"><a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a></small></div>
+            <small style="float: right;">
+              <a href="TODO">http://todo/oredev/video</a>
+              <a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a>
+          </small></div>
           </section>
 
           <section>
@@ -143,10 +147,10 @@
           <section>
           <h2>Example: Microformats2 style</h2>
           <pre><code>
-&lt;li class="h-item item"&gt;
-  &lt;div class="p-title title"&gt;&lt;%= item.title %&gt;&lt;/div&gt;
-  &lt;div class="p-status status"&gt;&lt;%= item.status %&gt;&lt;/div&gt;
-  &lt;div class="p-description description"&gt;&lt;%= item.description %&gt;&lt;/div&gt;
+&lt;li class="h-item"&gt;
+  &lt;div class="p-title"&gt;&lt;%= item.title %&gt;&lt;/div&gt;
+  &lt;div class="p-status"&gt;&lt;%= item.status %&gt;&lt;/div&gt;
+  &lt;div class="p-description"&gt;&lt;%= item.description %&gt;&lt;/div&gt;
   &lt;div class="actions"&gt;
     &lt;%= render :partial =&gt; "actions" %&gt;
   &lt;/div&gt;
@@ -175,6 +179,7 @@
               end
             end
           </code></pre>
+          <img src="images/workflow.png" style="height: 250px"/>
           </section>
 
 
