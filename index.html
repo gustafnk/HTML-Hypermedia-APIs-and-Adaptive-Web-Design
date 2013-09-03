@@ -116,23 +116,27 @@
             <small style="float: right;">
               <a href="https://vimeo.com/20781278">https://vimeo.com/20781278</a>
               <a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a>
+              <a href="http://amundsen.com/hypermedia/html/">http://amundsen.com/hypermedia/html/</a>
           </small></div>
           </section>
 
           <section>
           <h2>More good stuff</h2>
-          <ul style="list-style-type: none; margin: 30px 0">
+          <ul style="list-style-type: none; margin: 85px 0">
             <li>Browsable API (QA, devops)</li>
             <li>Great for learning about hypermedia!</li>
             <li>Microformats 2, RDFa Lite</li>
           </ul>
-          <small><a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br /><a href="http://www.w3.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a></small>
+          <small>
+            <a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br /><a href="http://www.w4.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a><br />
+            <a href="http://manu.sporny.org/2013/microdata-downward-spiral/">http://manu.sporny.org/2013/microdata-downward-spiral/</a>
+          </small>
           </section>
 
           <section>
-          <h2>Client support for HTML?</h2>
-          <ul class="fragment" style="list-style-type: none; margin-top: 100px">
-            <li>Mixed experiences on mobile devices...</li>
+          <h2>Client support for HTML APIs?</h2>
+          <ul style="list-style-type: none; margin-top: 100px">
+            <li class="fragment">Mixed experiences on mobile devices...</li>
             <li class="fragment">...but all mobile devices have a web browser!</li>
           </ul>
           </section>
@@ -209,7 +213,7 @@
           </section>-->
 
           <section>
-          <h2>A common goal</h2>
+          <h2>Idea: A common goal</h2>
           <p style="margin-top: 100px">Mobile first <span style="font-size: 2em; margin: 10px;">&cap;</span> HTML Hypermedia APIs<div style="font-size: 2em; margin: 20px;">=</div>Minimalistic HTML</p>
           </section>
 
@@ -219,7 +223,7 @@
           <ul style="list-style-type: none">
             <li>What is the most important content?</li>
             <li>Both a design principle and a run-time strategy</li>
-            <li>"Agressive Enhancement""</li>
+            <li>"Agressive Enhancement" (conditional lazy loading)</li>
           </ul>
           <small style="float: right; text-align: right; margin-top: 50px">
         
@@ -246,6 +250,11 @@
           </section>
 
           <section>
+          <h2>The API and the web <br />can be the same thing!</h2>
+          <p style="margin-top: 100px">HTML Hypermedia APIs <br /> + <br /> Adaptive Web Design </p>
+          </section>
+
+          <section>
           <h2>Adaptive Web Design</h2>
           <p style="margin: 50px">The tip of the iceberg ---&gt; Responsive web design</p>
           <p>Feature detection<br />RWD with server-side components<br />Device APIs<br /> Performance<br />Conditional loading<br />Content strategy<br />HTML5<br />Touch<br />Platform optimization<br />Ergonomics<br />...</p>
@@ -266,24 +275,33 @@
             <p></p>
             </section>
 
+            
             <section>
-            <h2>High level view</h2>
-            <p>TODO Image</p>
-            </section>
-
-            <section>
-            <h2>An exit strategy</h2>
+            <h2>First, an exit strategy</h2>
             <p><img src="images/exit.png" /></p>
             <p>www.example.com<br />api.example.com</p>
             </section>
 
             <section>
-            <h2>One more thing....</h2>
+            <h2>High level view</h2>
+            <ul style="list-style-type: none; line-height: 2em">
+              <li class="fragment">Same logical endpoint for different client types</li>
+              <li class="fragment">Separate URLs for web and API</li>
+              <li class="fragment">Minimal markup, content first</li>
+              <li class="fragment">Microformats2 as semantic markup (or RDFa Lite)</li>
+              <li class="fragment">Agressive enhancement (conditional lazy loading)</li>
+              <li class="fragment">Other AWD techniques</li>
+              <li class="fragment">Strip css and script tags for API perspective</li>
+            </ul>
+            </section>
+
+            <section>
+            <h2>Interlude</h2>
             <p>JSON is ok :)</p>
             </section>
 
             <section>
-            <h2>Changing the application</h2>
+            <h2>Demo: changing the application</h2>
             <!-- change the workflow rules -->
             <!-- add a column -->
             </section>
@@ -306,18 +324,33 @@
             </section>
 
             <section>
-            <h2>High level view</h2>
-            <p>TODO Image</p>
-            </section>
-
-            <section>
             <h2>Further exploration, books</h2>
-            <p>TODO Amundsen, Gustafson</p>
+            <p>
+            <div style="margin: 50px">
+              <a href="https://twitter.com/mamund">Mike Amundsen</a>, <a href="http://www.amazon.com/Building-Hypermedia-APIs-HTML5-Node/dp/1449306578">Building Hypermedia APIs<br /> with HTML5 and Node</a>
+            </div>
+            <div style="margin: 50px">
+              <a href="https://twitter.com/steveklabnik">Steve Klabnik</a>, <a href="http://www.designinghypermediaapis.com/">Designing Hypermedia APIs</a>
+            </div>
+            <div style="margin: 50px">
+              <a href="https://twitter.com/AaronGustafson">Aaron Gustafson</a>, <a href="http://easy-readers.net/books/adaptive-web-design/">Adaptive Web Design</a>
+            </div>
+            </p>
             </section>
 
             <section>
             <h2>Further exploration, online</h2>
-            <p>TODO Klabnik, Frost, Zakas, ROCA</p>
+            <p>
+            <div style="margin: 50px">
+              <a href="https://twitter.com/brad_frost/">Brad Frost</a>, <a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">Beyond Media Queries: <br />Anatomy of an Adaptive Web Design</a>
+            </div>
+            <div style="margin: 50px">
+              <a href="https://twitter.com/slicknet">Nicolas Zakas</a>, <a href="http://www.youtube.com/watch?v=hdTxeR90_1E">Progressive Enhancement 2.0</a>
+            </div>
+            <div style="margin: 50px">
+              <a href="https://twitter.com/stilkov">Stefan Tilkov</a> (et al), <a href="http://roca-style.org/">Resource-oriented Client Architecture</a>
+            </div>
+            </p>
             </section>
 
             <section>
@@ -326,7 +359,7 @@
             </section>
 
             <section>
-            <h1>THE END</h1>
+            <h1>Thank you!</h1>
             <p>
             <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
             </p>
