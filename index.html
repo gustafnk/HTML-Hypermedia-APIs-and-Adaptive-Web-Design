@@ -52,15 +52,25 @@
         </section>
 
         <section>
-        <h2>Two problems</h2>
+        <h2>Two areas of interest</h2>
         <ul style="list-style-type: none;">
-          <li>
-          No application logic in API clients
-          <i class="fragment"> =&gt; Hypermedia APIs</i>
+          <li> Hypermedia APIs
           </li>
           <li>
-          Multi-device web
-          <i class="fragment">  =&gt; Adaptive Web Design</i>
+          Adaptive Web Design
+        </ul>
+        </section>
+
+        <section>
+        <h2>Two areas of interest</h2>
+        <ul style="list-style-type: none;">
+          <li> Hypermedia APIs
+          <i> &lt;=
+            No application logic in API clients</i>
+          </li>
+          <li>
+          Adaptive Web Design
+          <i>  &lt;= Multi-device web</i>
           </li>
         </ul>
         </section>
@@ -72,14 +82,17 @@
         </p>
         </section>
 
+        <!--
         <section>
         <h2>Why so fat clients?</h2>
         <p><img src="images/why_so_fat_clients.png" /></p>
+         authorization rules, valid state transitions, etc 
         </section>
+        -->
 
         <section>
         <h2>Fat API is better!</h2>
-        <p><img src="images/fat_api_is_better.png" /></p>
+        <p><img src="images/workflow.png" style="position: absolute; right: -150px; top: 108px; width: 150px"/><img src="images/fat_api_is_better.png" style="width: 750px"/></p>
         </section>
 
         <section data-background="#fff">
@@ -123,30 +136,21 @@
           <section>
           <h2>More good stuff</h2>
           <ul style="list-style-type: none; margin: 85px 0">
-            <li>Browsable API (QA, devops)</li>
+            <li>Browsable API (QA, ops)</li>
             <li>Great for learning about hypermedia!</li>
-            <li>Microformats 2, RDFa Lite</li>
+            <!-- <li>Microformats 2, RDFa Lite</li> -->
           </ul>
           <small>
-            <a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br /><a href="http://www.w4.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a><br />
-            <a href="http://manu.sporny.org/2013/microdata-downward-spiral/">http://manu.sporny.org/2013/microdata-downward-spiral/</a>
+            <a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br />
+            <!-- <a href="http://www.w4.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a><br />
+            <a href="http://manu.sporny.org/2013/microdata-downward-spiral/">http://manu.sporny.org/2013/microdata-downward-spiral/</a>-->
           </small>
           </section>
 
           <section>
-          <h2>Client support for HTML APIs?</h2>
-          <ul style="list-style-type: none; margin-top: 100px">
-            <li class="fragment">Mixed experiences on mobile devices...</li>
-            <li class="fragment">...but all mobile devices have a web browser!</li>
-          </ul>
-          </section>
-
-          <section>
-          <h2>Use the browser for API communication</h2>
-          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
-            <li>Still experimental</li>
-            <li>Good HTTP behavior for free</li>
-          </ul>
+          <h2>Interlude</h2>
+          <p>JSON is ok :)</p>
+          <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
           </section>
 
           <section>
@@ -182,28 +186,6 @@
           </code></pre>
           </section>
 
-          <section>
-          <h2>Workflow definition</h2>
-          <pre><code>
-            class Item
-              def next_states
-                case self.status
-                when 'backlog'
-                  ['working']
-                when 'working'
-                  ['backlog', 'verify']
-                when 'verify'
-                  ['working', 'done']
-                when 'done'
-                  ['working']
-                end
-              end
-            end
-          </code></pre>
-          <img src="images/workflow.png" style="height: 250px"/>
-          </section>
-
-
           <!--<section>
           <h2>The aesthetics of modernism</h2>
           <ul style="text-align: center; list-style-type: none; margin-top: 100px">
@@ -213,8 +195,27 @@
           </section>-->
 
           <section>
+          <h2>Client support for HTML APIs?</h2>
+          <!-- <ul style="list-style-type: none; margin-top: 100px">
+            <li class="fragment">Mixed experiences on mobile devices...</li>
+            <li class="fragment">...but all mobile devices have a web browser!</li>
+          </ul>-->
+          </section>
+
+          <!--
+          <section>
+          <h2>Use the browser for API communication</h2>
+          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
+            <li>Still experimental</li>
+            <li>Good HTTP behavior for free</li>
+          </ul>
+          </section>
+          -->
+
+          <section>
           <h2>Idea: A common goal</h2>
-          <p style="margin-top: 100px">Mobile first <span style="font-size: 2em; margin: 10px;">&cap;</span> HTML Hypermedia APIs<div style="font-size: 2em; margin: 20px;">=</div>Minimalistic HTML</p>
+          <p style="margin-top: 100px">HTML Hypermedia APIs <span style="font-size: 2em; margin: 10px;">&cap;</span> Mobile first<div style="font-size: 2em; margin: 20px;">=</div>Minimal HTML <br /><small>(also, reduce number of roundtrips)</small></p>
+          <!-- also, think about different cache profiles -->
           </section>
 
           <!-- let's start looking at mobile web design -->
@@ -222,7 +223,7 @@
           <h2>[Primary] Content first</h2>
           <ul style="list-style-type: none">
             <li>What is the most important content?</li>
-            <li>Both a design principle and a run-time strategy</li>
+            <!-- <li>Both a design principle and a run-time strategy</li> -->
             <li>"Agressive Enhancement" (conditional lazy loading)</li>
           </ul>
           <small style="float: right; text-align: right; margin-top: 50px">
@@ -285,26 +286,44 @@
             <section>
             <h2>High level view</h2>
             <ul style="list-style-type: none; line-height: 2em">
-              <li class="fragment">Same logical endpoint for different client types</li>
+              <li class="fragment">Same code base for web and API</li>
               <li class="fragment">Separate URLs for web and API</li>
               <li class="fragment">Minimal markup, content first</li>
               <li class="fragment">Microformats2 as semantic markup (or RDFa Lite)</li>
               <li class="fragment">Agressive enhancement (conditional lazy loading)</li>
-              <li class="fragment">Other AWD techniques</li>
-              <li class="fragment">Strip css and script tags for API perspective</li>
+              <li class="fragment">[Other AWD techniques]</li>
+              <li class="fragment">Optimize API perspective</li>
             </ul>
             </section>
 
-            <section>
-            <h2>Interlude</h2>
-            <p>JSON is ok :)</p>
-            </section>
-
+            
             <section>
             <h2>Demo: changing the application</h2>
             <!-- change the workflow rules -->
             <!-- add a column -->
             </section>
+            <!--
+            <section>
+            <h2>Workflow definition</h2>
+          <pre><code>
+            class Item
+              def next_states
+                case self.status
+                when 'backlog'
+                  ['working']
+                when 'working'
+                  ['backlog', 'verify']
+                when 'verify'
+                  ['working', 'done']
+                when 'done'
+                  ['working']
+                end
+              end
+            end
+          </code></pre>
+          <img src="images/workflow.png" style="height: 250px"/>
+          </section>
+          -->
 
             <section>
             <h2>Summary</h2>
@@ -354,11 +373,6 @@
             </section>
 
             <section>
-            <h2>Questions?</h2>
-            <p></p>
-            </section>
-
-            <section>
             <h1>Thank you!</h1>
             <p>
             <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
@@ -383,7 +397,7 @@
             center: true,
 
             theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+            transition: 'none' || Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
