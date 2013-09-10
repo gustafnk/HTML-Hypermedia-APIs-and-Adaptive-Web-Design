@@ -1,0 +1,2 @@
+rails server -p 3001
+rails s -P tmp/pids/server2.pid
