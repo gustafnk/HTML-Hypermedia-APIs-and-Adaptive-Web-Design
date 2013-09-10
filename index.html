@@ -6,8 +6,8 @@
 
     <title>HTML Hypermedia APIs and Adaptive Web Design</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A presentation about two awesome things, working in harmony">
+    <meta name="author" content="Gustaf Nilsson Kotte">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -51,6 +51,7 @@
         </p>
         </section>
 
+        <!--
         <section>
         <h2>Two areas of interest</h2>
         <ul style="list-style-type: none;">
@@ -60,10 +61,11 @@
           Adaptive Web Design
         </ul>
         </section>
+        -->
 
         <section>
         <h2>Two areas of interest</h2>
-        <ul style="list-style-type: none;">
+        <ul style="list-style-type: none; margin-top: 50px">
           <li> Hypermedia APIs
           <i> &lt;=
             No application logic in API clients</i>
@@ -73,6 +75,7 @@
           <i>  &lt;= Multi-device web</i>
           </li>
         </ul>
+        <p class="fragment" style="margin: 80px">Working nicely together!</p>
         </section>
 
         <section>
@@ -91,7 +94,7 @@
         -->
 
         <section>
-        <h2>Fat API is better!</h2>
+        <h2>Prefer fat APIs over fat clients</h2>
         <p><img src="images/workflow.png" style="position: absolute; right: -150px; top: 108px; width: 150px"/><img src="images/fat_api_is_better.png" style="width: 750px"/></p>
         </section>
 
@@ -136,12 +139,12 @@
           <section>
           <h2>More good stuff</h2>
           <ul style="list-style-type: none; margin: 85px 0">
-            <li>Browsable API (QA, ops)</li>
+            <!-- <li>Browsable API (QA, ops)</li> -->
             <li>Great for learning about hypermedia!</li>
             <!-- <li>Microformats 2, RDFa Lite</li> -->
           </ul>
           <small>
-            <a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br />
+            <!-- <a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br /> -->
             <!-- <a href="http://www.w4.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a><br />
             <a href="http://manu.sporny.org/2013/microdata-downward-spiral/">http://manu.sporny.org/2013/microdata-downward-spiral/</a>-->
           </small>
@@ -149,7 +152,7 @@
 
           <section>
           <h2>Interlude</h2>
-          <p>JSON is ok :)</p>
+          <p style="margin: 70px 0 50px 0;">JSON is ok :)</p>
           <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
           </section>
 
@@ -157,13 +160,13 @@
           <h2>Example: Microformats2, entities</h2>
           <pre><code>
 &lt;li class="h-item"&gt;
-  &lt;div class="p-title"&gt;&lt;%= item.title %&gt;&lt;/div&gt;
+  &lt;div class="p-name"&gt;&lt;%= item.name %&gt;&lt;/div&gt;
   &lt;div class="p-status"&gt;&lt;%= item.status %&gt;&lt;/div&gt;
   &lt;div class="p-description"&gt;&lt;%= item.description %&gt;&lt;/div&gt;
-  &lt;div class="actions"&gt;
+  &lt;div class="p-forms"&gt;
     ...
   &lt;/div&gt;
-  &lt;div class="links"&gt;
+  &lt;div class="p-links"&gt;
     ...
   &lt;/div&gt;
 &lt;/li&gt;
@@ -173,8 +176,8 @@
           <section>
           <h2>Example: Microformats2, forms</h2>
           <pre><code>
-&lt;div class="actions"&gt;
-  &lt;form class="move backlog" action="/items/backlog" method="POST"&gt;
+&lt;div class="p-forms"&gt;
+  &lt;form data-rel="move backlog" action="/items/backlog" method="POST"&gt;
     &lt;input name="id" type="hidden" value="4"&gt;
     &lt;input title="submit" type="submit" value="Move to backlog"&gt;
   &lt;/form&gt;
@@ -233,21 +236,24 @@
           </section>
 
           <section>
-          <img src="images/not_the_thing1.png" />
-          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
-          </section>
-
-          <section>
           <img src="images/not_the_thing2.png" />
           <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
           </section>
 
-          <section>Do you see it? :)</section>
+          <section>
+          <img src="images/not_the_thing1.png" />
+          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
+          </section>
+
+          <!-- <section>Do you see it? :)</section> -->
 
 
           <section>
           <h2>The API and the web <br />can be the same thing!</h2>
-          <p style="margin-top: 100px">HTML Hypermedia APIs <br /> + <br /> Content First <br /> + <br /> Agressive Enhancement</p>
+          <p style="margin-top: 100px">
+          HTML Hypermedia APIs loves Mobile First<br /><br /> 
+          Mobile First loves all web browsers and devices
+          </p>
           </section>
 
           <section>
@@ -257,7 +263,7 @@
 
           <section>
           <h2>Adaptive Web Design</h2>
-          <p style="margin: 50px">The tip of the iceberg ---&gt; Responsive web design</p>
+          <p style="margin: 50px">Responsive web design</p>
           <p>Feature detection<br />RWD with server-side components<br />Device APIs<br /> Performance<br />Conditional loading<br />Content strategy<br />HTML5<br />Touch<br />Platform optimization<br />Ergonomics<br />...</p>
           <p style="margin-top: 50px"><small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</a></small></p>
           </section>
@@ -265,9 +271,9 @@
           <section>
           <h2>Progressive Enhancement</h2>
           <div>
-            <blockquote>An escalator can never break;<br /> it can only become stairs</blockquote>
+            <!-- <blockquote>An escalator can never break;<br /> it can only become stairs</blockquote>
             <p style="float: right;">— Mitch Hedberg</p></div>
-          <div style="clear: both" />
+          <div style="clear: both" /> -->
             <img src="images/escalator.jpg" style="width: 300px; margin: 0 auto" />
             </section>
 
@@ -288,10 +294,11 @@
             <ul style="list-style-type: none; line-height: 2em">
               <li class="fragment">Same code base for web and API</li>
               <li class="fragment">Separate URLs for web and API</li>
-              <li class="fragment">Minimal markup, content first</li>
-              <li class="fragment">Microformats2 as semantic markup (or RDFa Lite)</li>
-              <li class="fragment">Agressive enhancement (conditional lazy loading)</li>
-              <li class="fragment">[Other AWD techniques]</li>
+              <li class="fragment">Content first + minimize roundtrips</li>
+              <li class="fragment">Minimize roundtrips</li>
+              <li class="fragment">Microformats2 as semantic layer <small>or RDFa [Lite]</small></li>
+              <li class="fragment">Agressive enhancement</li>
+              <li class="fragment">Other AWD techniques :)</li>
               <li class="fragment">Optimize API perspective</li>
             </ul>
             </section>
@@ -389,7 +396,7 @@
         <script>
 
           // Full list of configuration options available here:
-          // https://github.com/hakimel/reveal.js#configuration
+          // https://github.com/Hakimel/reveal.js#configuration
           Reveal.initialize({
             controls: true,
             progress: true,
