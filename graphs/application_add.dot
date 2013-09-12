@@ -1,0 +1,43 @@
+digraph application {
+  graph [fontname = "Liberation Sans"];
+  edge [fontname = "Liberation Sans"];
+  node [fontname = "Liberation Sans", fontsize = 30];
+
+/* 
+  "Backlog" [color="#cccccc", style="filled"];
+  "Working" [color="#cccccc", style="filled"];
+  "Verify" [color="#cccccc", style="filled"];
+  "Done" [color="#cccccc", style="filled"];
+
+  "Board" -> "Backlog" [color=red];
+  "Board" -> "Working";
+  "Board" -> "Verify";
+  "Board" -> "Done";
+*/
+
+/*
+  "Board" -> "Navigation";
+  "Backlog" -> "Navigation";
+  "Working" -> "Navigation";
+  "Verify" -> "Navigation";
+  "Done" -> "Navigation";
+
+  "Navigation" -> "Board";
+  "Navigation" -> "Backlog";
+  "Navigation" -> "Working";
+  "Navigation" -> "Verify";
+  "Navigation" -> "Done";
+*/
+
+  "Backlog" -> "Working" // [label=Move color=red];
+  "Working" -> "Backlog" // [label=Move color=red];
+  "Working" -> "Verify" // [label=Move color=red];
+  "Verify" -> "Working" // [label=Move color=red];
+  "Verify" -> "Done" // [label=Move color=red];
+  "Done" -> "Working" // [label=Move color=red];
+  "Done" -> "Archive" // [label=Move color=red];
+  "Archive" -> "Done" // [label=Move color=red];
+  
+  //"Working" -> "Pull" [label=Backlog color=red];
+  //"Done" -> "Pull" [label=Verify color=red];
+}
