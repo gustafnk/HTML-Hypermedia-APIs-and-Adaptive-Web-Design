@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
 
-    <title>HTML Hypermedia APIs and Adaptive Web Design</title>
+    <title>Design Hypermedia APIs</title>
 
-    <meta name="description" content="A presentation about two awesome things, working in harmony">
+    <meta name="description" content="A presentation on how to design hypermedia APIs">
     <meta name="author" content="Gustaf Nilsson Kotte">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-        <h2>HTML Hypermedia APIs <br />and <br />Adaptive Web Design</h2>
+        <h2>Design Hypermedia APIs</h2>
         <p>
         <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
         </p>
@@ -51,46 +51,125 @@
         </p>
         </section>
 
-        <!--
         <section>
-        <h2>Two areas of interest</h2>
-        <ul style="list-style-type: none;">
-          <li> Hypermedia APIs
-          </li>
-          <li>
-          Adaptive Web Design
-        </ul>
-        </section>
-        -->
-
-        <section>
-        <h2>Two areas of interest</h2>
-        <ul style="list-style-type: none; margin-top: 50px">
-          <li> Hypermedia APIs
-          <i> - No application logic in API clients</i>
-          </li>
-          <li>
-          Adaptive Web Design
-          <i> - Multi-device web</i>
-          </li>
-        </ul>
-        <p class="fragment" style="margin: 80px">Working nicely together!</p>
-        </section>
-
-        <section>
-        <h2>Demo, Kanban board</h2>
-        <p>HTML Hypermedia API + Adaptive Web Design
+        <h2>A kanban board</h2>
         <p><img src="images/workflow.png" /></p>
         </p>
         </section>
 
-        <!--
         <section>
-        <h2>Why so fat clients?</h2>
+        <h2>Without Hypermedia</h2>
         <p><img src="images/why_so_fat_clients.png" /></p>
-         authorization rules, valid state transitions, etc 
         </section>
-        -->
+
+        <section>
+        <h2>Server side: enforce rules</h2>
+        <p>Don't trust clients</p>
+        </section>
+
+        <section>
+        <h2>Client side: user friendly</h2>
+        <p>
+        <ul style="list-style-type: none; margin-top: 50px">
+        <li>Hide non-valid transitions</li>
+        <li>Show primary transitions</li>
+        <li>&nbsp;</li>
+        <li>"Read the specification"</li>
+        </ul></p>
+        </section>
+
+        <section>
+        <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
+        <h2>Client side, specification</h2>
+        <pre style="width: 700px">
+
+    Implement the state machine on the right.
+
+    The primary action for each state is the
+    "downward" arrow, except for the state
+    "done" where the primary action is
+    to move the item back to the "working" state.
+
+        </pre>
+        </section>
+
+
+        <section>
+        <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
+        <h2>Client side</h2>
+        <pre style="width: 700px"><code>
+      function nextStates(item) {
+        if (item.state == 'backlog')
+          return ['working'];
+        else if (item.state == 'working')
+          return ['backlog', 'verify']
+        ...
+    
+      function getPrimary(state) {
+        if (item.state == 'backlog')
+          return 'working';
+        ...
+      }
+          </code></pre>
+        </section>
+
+        <section>
+        <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
+        <h2>Client side</h2>
+        <pre style="width: 700px"><code>
+      function nextStates(item) {
+        dict = {
+          'backlog' =&gt; ['working'],
+          'working' =&gt; ['backlog, verify'],
+          ...
+       
+        return dict[item.state];
+    
+      function getPrimary(state) {
+        if (item.state == 'backlog')
+          return 'working';
+        ...
+      }
+      </code></pre>
+        </section>
+
+        <section>
+        <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
+        <h2>Client side</h2>
+        <pre style="width: 700px"><code>
+      function nextStates(item) {
+        dict = {
+          'backlog' =&gt; ['working'],
+          'working' =&gt; ['backlog, verify'],
+          ...
+       
+        return dict[item.state];
+    
+      function isPrimary(state, nextState) {
+        return nextState == nextStates(state).last();
+      }
+          </code></pre>
+        </section>
+
+        <section>
+        <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
+        <h2>Client side</h2>
+        <pre style="width: 700px"><code>
+      function nextStates(item) {
+        var stateMachine = new StateMachine(conf.json);
+        return stateMachine.getTransitions(item.state);
+    
+      function isPrimary(state, nextState) {
+        return nextState == nextStates(state).last();
+      }
+      </code></pre>
+        </section>
+
+
+        <section>
+        <h2>Without Hypermedia</h2>
+        <p><img src="images/why_so_fat_clients.png" /></p>
+        </section>
 
         <section>
         <h2>Prefer fat APIs over fat clients</h2>
