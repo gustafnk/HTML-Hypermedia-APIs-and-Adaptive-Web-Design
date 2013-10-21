@@ -1,0 +1,50 @@
+Hyper means "over" or "beyond"
+  Hypertext = beyond text
+Affordances, p11
+  Cup
+Representations, "Not a cup"
+
+
+Programming the media type
+
+A REST API should spend almost all of its descriptive effort in
+defining the media type(s) used for representing resources and driv-
+ing application state, or in defining extended relation names and/or
+hypertext-enabled mark-up for existing standard media types. Any
+effort spent describing what methods to use on what URIs of interest
+should be entirely defined within the scope of the processing rules
+for a media type (and, in most cases, already defined by existing
+media types). [Failure here implies that out-of-band information is
+driving interaction instead of hypertext.]
+Roy Fielding, “REST APIs Must be Hypertext Driven”
+
+
+Design process
+  1. Evaluate processes
+  2. Create state machine
+  3. Evaluate media types
+  4. Create or choose media types
+  5. Implementation!
+  6. Refinements
+      Caching and collapsing collections
+ 
+  (Nothing about urls, status code, etc)
+
+  But also think about the reading and writing layer, GET/POST.
+
+
+Media type design
+
+The design of a media type can directly impact the user-perceived
+performance of a distributed hypermedia system. Any data that
+must be received before the recipient can begin rendering the repre-
+sentation adds to the latency of an interaction. A data format that
+places the most important rendering information up front, such that
+the initial information can be incrementally rendered while the rest
+of the information is being received, results in much better user-
+perceived performance than a data format that must be entirely
+received before rendering can begin.
+  Roy Fielding, "the thesis"
+
+APIs should expose workflows
+  Process = state transitions
