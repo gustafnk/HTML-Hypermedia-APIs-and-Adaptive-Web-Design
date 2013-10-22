@@ -63,6 +63,20 @@
         </section>
 
         <section>
+        <h2>API</h2>
+        <pre><code>
+        GET/POST items/
+
+        {
+          id: 123,
+          name: "...",
+          description: "...",
+          status: "backlog|working|verify|done"
+        }
+        </code></pre>
+        </section>
+
+        <section>
         <h2>Server side: enforce rules</h2>
         <p>Don't trust clients</p>
         </section>
@@ -80,7 +94,7 @@
 
         <section>
         <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
-        <h2>Client side, specification</h2>
+        <h2>Specification</h2>
         <pre style="width: 700px">
 
     Implement the state machine on the right.
@@ -102,8 +116,9 @@
         if (item.state == 'backlog')
           return ['working'];
         else if (item.state == 'working')
-          return ['backlog', 'verify']
+          return ['backlog', 'verify'];
         ...
+      }
     
       function getPrimary(state) {
         if (item.state == 'backlog')
@@ -124,6 +139,7 @@
           ...
        
         return dict[item.state];
+      }
     
       function getPrimary(state) {
         if (item.state == 'backlog')
@@ -144,6 +160,7 @@
           ...
        
         return dict[item.state];
+      }
     
       function isPrimary(state, nextState) {
         return nextState == nextStates(state).last();
@@ -157,7 +174,9 @@
         <pre style="width: 700px"><code>
       function nextStates(item) {
         var stateMachine = new StateMachine(conf.json);
+
         return stateMachine.getTransitions(item.state);
+      }
     
       function isPrimary(state, nextState) {
         return nextState == nextStates(state).last();
@@ -183,6 +202,24 @@
         </section>
 
         <section>
+        <h2>Representations</h2>
+        <p>TODO: This is not a cup</p>
+        </section>
+
+        <section>
+        <!-- <h2>Programming the media type</h2> -->
+        <div style="margin-top: 50px">
+          <blockquote style="font-size: 0.7em;">A REST API should spend almost all of its descriptive effort in defining the media type(s) used for representing resources and driving application state, or in defining extended relation names and/or hypertext-enabled mark-up for existing standard media types. Any effort spent describing what methods to use on what URIs of interest should be entirely defined within the scope of the processing rules for a media type (and, in most cases, already defined by existing media types). [Failure here implies that out-of-band information is driving interaction instead of hypertext.]
+</blockquote>
+          <p style="float: right;">— Roy Fielding, “REST APIs Must be Hypertext Driven”<br /><br /><br />
+          </p></div>
+          <div>
+            <!-- <small>"do stuff" = use cases</small> -->
+          </div>
+          </section>
+
+
+        <section>
         <h2>Hypermedia APIs</h2>
         <p></p>
         </section>
@@ -198,6 +235,49 @@
             <!-- <small>"do stuff" = use cases</small> -->
           </div>
           </section>
+
+        <section>
+        <h2>Design process</h2>
+        <p>
+        <ol>
+          <li>Evaluate processes</li>
+          <li>Create state machine</li>
+          <li>Evaluate media types</li>
+          <li>Create or choose media types</li>
+          <li>Implementation</li>
+          <li>Refinements</li>
+        </ol>
+        </p>
+        </section>
+
+        <section>
+        <h2>1. Evaluate processes</h2>
+        <p></p>
+        </section>
+
+        <section>
+        <h2>1. Evaluate processes</h2>
+        <p>
+        <pre><code>
+
+
+          Collections: "board", backlog, working, verify, done
+          Single: details, edit
+
+
+
+          Write: being able to change the state of an item 
+                 according to the rules
+
+
+
+          </code></pre>
+        </section>
+
+        <section>
+        <h2>2. Create state machine</h2>
+        <p></p>
+        </section>
 
           <section>
           <h2>Use HTML for Hypermedia APIs</h2>
@@ -296,84 +376,7 @@
           </section>
           -->
 
-          <section>
-          <h2>HTML Hypermedia APIs &nbsp;❤&nbsp; Mobile First</h2>
-          <!-- <p style="margin-top: 100px">TODO Usecases picture!</p> -->
-          <!-- also, think about different cache profiles -->
-          </section>
-          
-          <section>
-          <img src="images/not_the_thing2_layer.png" style="width: 700px"/>
-          <small><a href="http://filamentgroup.com/lab/ajax_includes_modular_content/">http://filamentgroup.com/lab/ajax_includes_modular_content/</a></small>
-          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
-          </section>
-
-          <section>
-          <img src="images/not_the_thing1.png" style="width: 500px"/>
-          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
-          </section>
-
-          <!-- <section>Do you see it? :)</section> -->
-
-
-          <section>
-          <h2>Adaptive Web Design</h2>
-          <p style="margin: 50px">Responsive web design</p>
-          <p>Feature detection<br />Device APIs<br /> Performance<br />Conditional loading<br />Content strategy<br />Touch<br />Platform optimization<br />Ergonomics<br />...</p>
-          <p style="margin-top: 50px"><small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</a></small></p>
-          </section>
-
-          <section>
-          <h2>Progressive Enhancement</h2>
-          <div>
-            <!-- <blockquote>An escalator can never break;<br /> it can only become stairs</blockquote>
-            <p style="float: right;">— Mitch Hedberg</p></div>
-          <div style="clear: both" /> -->
-            <img src="images/escalator.jpg" style="width: 400px; margin: 0 auto" />
-            </section>
-
-
-          <section>
-          <h2>The API and the web <br />can be the same thing!</h2>
-          <p style="margin-top: 100px">
-          HTML Hypermedia APIs &nbsp;❤&nbsp; Mobile First<br /><br /> 
-          Mobile First &nbsp;❤&nbsp; all web browsers and devices
-          </p>
-          </section>
-
-          <section>
-          <h2>The API and the web <br />can be the same thing!</h2>
-          <p style="margin-top: 100px">HTML Hypermedia APIs <br /> ❤ <br /> Adaptive Web Design </p>
-          </section>
-
-            <section>
-            <h2>HTML Hypermedia APIs + AWD</h2>
-            <p></p>
-            </section>
-
-           <!-- 
-            <section>
-            <h2>First, an exit strategy</h2>
-            <p><img src="images/exit.png" /></p>
-            <p>www.example.com<br />api.example.com</p>
-            </section>
-            -->
-
-            <section>
-            <h2>High level view</h2>
-            <ul style="list-style-type: none; line-height: 2em">
-              <li class="fragment">Same code for web and API</li>
-              <li class="fragment">...yes, they share templates too</li>
-              <li class="fragment">Separate URLs</i>
-            <!-- <li class="fragment">Optimize response size and #roundtrips</li> -->
-            <!-- <li class="fragment">Microformats2 <span style="font-size: 0.5em">or RDFa [Lite]</span></li> -->
-              <!-- <li class="fragment">Agressive enhancement</li>
-              <li class="fragment">Other AWD techniques :)</li>-->
-              <li class="fragment">Optimize for both perspectives</li>
-            </ul>
-            </section>
-
-            
+                     
             <section>
             <h2>Demo: changing the application</h2>
             <p><img src="images/workflow.png" style="width: 200px; margin: 0 50px" />
