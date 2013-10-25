@@ -123,7 +123,7 @@
 
         <section>
         <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
-        <h2>Client side</h2>
+        <h2>Client side variations</h2>
         <pre style="width: 700px"><code>
       function nextStates(item) {
         if (item.state == 'backlog')
@@ -143,7 +143,7 @@
 
         <section>
         <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
-        <h2>Client side</h2>
+        <h2>Client side variations</h2>
         <pre style="width: 700px"><code>
       function nextStates(item) {
         dict = {
@@ -164,7 +164,7 @@
 
         <section>
         <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
-        <h2>Client side</h2>
+        <h2>Client side variations</h2>
         <pre style="width: 700px"><code>
       function nextStates(item) {
         dict = {
@@ -183,7 +183,7 @@
 
         <section>
         <img src="images/workflow.png" style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
-        <h2>Client side</h2>
+        <h2>Client side variations</h2>
         <pre style="width: 700px"><code>
       function nextStates(item) {
         var stateMachine = new StateMachine(conf.json);
@@ -195,6 +195,7 @@
         return nextState == nextStates(state).last();
       }
       </code></pre>
+        Many possibilities! This is bad...
         </section>
 
 
@@ -291,16 +292,19 @@
         </section>
 
         <section>
-        <h3>:(</h3>
+        <h3>First attempt...</h3>
         <p><img src="graphs/first_design_transitions_from_details.png" /></p>
         </section>
         <section>
+        Simplified
         <p><img src="graphs/second_simplify_diagram.png" /></p>
         </section>
         <section>
+        Inline actions
         <p><img src="graphs/third_center_state_transitions.png" /></p>
         </section>
         <section>
+        Better root node
         <p><img src="graphs/forth_join_navigation_and_board.png" /></p>
         </section>
 
@@ -308,23 +312,55 @@
         <h2>3. Evaluate media types</h2>
         <p></p>
         </section>
+        <section>
+        <h2>H-factors</h2>
+        <p><img src="images/hfactor_big.png" />
+        <a href="">TODO link</a></p>
+        </section>
+        <section>
+        <h2>H-factors for our API</h2>
+        <p>links, form POST
+        <ul>
+          <li>TODO</li>
+        </ul>
+        </p>
+        </section>
 
         <section>
         <h2>4. Create or choose media types</h2>
         <p></p>
         </section>
-        
         <section>
-        <h2>5. Implementation</h2>
-        <p></p>
+        <ul>
+          <li>HTML</li>
+          <li>HAL</li>
+          <li>Collection+JSON</li>
+          <li>Siren</li>
+          <li>JSON-LD</li>
+          <li>Atom</li>
+          <li>SVG</li>
+          <li>TODO OData?</li>
+        </ul>
         </section>
-
         <section>
-        <h2>6. Refinements</h2>
-        <p></p>
+        <h2></h2>
+        <table style="border-style: solid; border-width: 1px">
+          <tr><th>Name</th><th>Summary</th><th>Read/write</th><th>Comment</th></tr>
+          <tr>
+            <td>HAL</td><td>Resources and relations</td><td>R</td><td>Write support with addon</td>
+          </tr>
+          <tr>
+            <td>Collection+JSON</td><td>Collections over JSON</td><td>RW</td><td></td>
+          </tr>
+          <tr>
+            <td>Siren</td><td>~ JSON port of HTML</td><td>RW</td><td></td>
+          </tr>
+          <tr>
+            <td>JSON-LD</td><td>~ RDF over JSON</td><td>R</td><td></td>
+          </tr>
+        </table>
         </section>
-
-
+ 
           <section>
           <h2>Use HTML for Hypermedia APIs</h2>
           <ul style="list-style-type: none; margin-top: 100px">
@@ -355,11 +391,6 @@
           </small>
           </section>
 
-          <section>
-          <h2>Interlude</h2>
-          <p style="margin: 70px 0 50px 0;">JSON is ok :)</p>
-          <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
-          </section>
 
           <section>
           <h2>Example: Microformats2, entities</h2>
@@ -394,66 +425,98 @@
           </code></pre>
           </section>
 
-          <!--<section>
-          <h2>The aesthetics of modernism</h2>
-          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
-            <li>Bricolage (DIY)</li>
-          </ul>
-          Entrepreneur, startups, etc 
-          </section>-->
-
-          <!--
           <section>
-          <h2>Client support for HTML APIs?</h2>
-          <ul style="list-style-type: none; margin-top: 100px">
-            <li class="fragment">Mixed experiences on mobile devices...</li>
-            <li class="fragment">...but all mobile devices have a web browser!</li>
-          </ul>
+          <h2>Interlude</h2>
+          <p style="margin: 70px 0 50px 0;">JSON is ok :)</p>
+          <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
           </section>
-          -->
+       
+        <section>
+        <h2>5. Implementation</h2>
+        <p></p>
+        </section>
 
-          <!--
-          <section>
-          <h2>Use the browser for API communication</h2>
-          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
-            <li>Still experimental</li>
-            <li>Good HTTP behavior for free</li>
-          </ul>
-          </section>
-          -->
+        <section>
+        <h2>6. Refinements</h2>
+        <p></p>
+        </section>
 
+        <section>
+        <p><img src="graphs/forth_join_navigation_and_board.png" /></p>
+        </section>
+        <section>
+        <p><img src="graphs/fifth_extract_details.png" /></p>
+        </section>
+
+        <section>
+        <h2>Done! Just one more thing... :)</h2>
+        </section>
+
+        <section>
+        <h2>Writing a hypermedia aware client</h2>
+        </section>
+
+        <section>
+        <p>Not harder than writing a "regular" client, just different...</p>
+        </section>
+
+        <section>
+        <p>...which means it's harder, since new to many developers :(</p>
+        </section>
+
+        <section>
+        <h2>Generic vs specific client?</h2>
+        <p>
+        <ul>
+          <li>Representations</li>
+          <li>Semantics for "things"</li>
+          <li>Link relations (navigation semantics)</li>
+          <li>Form relations (process semantics)</li>
+        </ul>
+        </p>
+        </section>
+
+        <section>
+        <h2>Standardized domain vs walled garden</h2>
+        <p>
+        <ul>
+          <li>"Atom client" vs "Twitter client"</li>
+          <li>However, standard media types have value!</li>
+        </ul>
+        </p>
+        </section>
+
+        <section>
+        <h2>Some advice</h2>
+        <p>
+        <ul>
+          <li>Loose queries, à la $(".item .name")...</li>
+          <li>...this is hard in JSON</li>
+          <li>Root URI is the only URI known to the client</li>
+          <li>Follow media type spec and give feedback to authors</li>
+          <li>Again, representations</li>
+        </ul>
+        </p>
+        </section>
+
+
+        <section>
+        <h2>Demo: Ruby console client</h2>
+        </section>
                      
-            <section>
-            <h2>Demo: changing the application</h2>
-            <p><img src="images/workflow.png" style="width: 200px; margin: 0 50px" />
-            <img src="images/workflow_add.png" style="width: 200px; margin: 0 50px;" /></p>
-            <!-- change the workflow rules -->
-            <!-- add a column -->
-            </section>
-            <!--
-            <section>
-            <h2>Workflow definition</h2>
-          <pre><code>
-            class Item
-              def next_states
-                case self.status
-                when 'backlog'
-                  ['working']
-                when 'working'
-                  ['backlog', 'verify']
-                when 'verify'
-                  ['working', 'done']
-                when 'done'
-                  ['working']
-                end
-              end
-            end
-          </code></pre>
-          <img src="images/workflow.png" style="height: 250px"/>
-          </section>
-          -->
+        <section>
+        <h2>Demo: changing the application</h2>
+        <p><img src="images/workflow.png" style="width: 200px; margin: 0 50px" />
+        <img src="images/workflow_add.png" style="width: 200px; margin: 0 50px;" /></p>
+        <!-- change the workflow rules -->
+        <!-- add a column -->
+        </section>
 
-            <section>
+        <section>
+        <h2>Where's the application?</h2>
+        <p>TODO: Where's Waldo image</p>
+        </section>
+        <section>
             <h2>Summary</h2>
             <p></p>
             </section>
