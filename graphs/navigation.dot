@@ -1,0 +1,47 @@
+digraph application {
+  graph [fontname = "Liberation Sans"];
+  edge [fontname = "Liberation Sans", fontsize = 20];
+  node [fontname = "Liberation Sans", fontsize = 30];
+
+/* 
+  "Backlog" [color="#cccccc", style="filled"];
+  "Working" [color="#cccccc", style="filled"];
+  "Verify" [color="#cccccc", style="filled"];
+  "Done" [color="#cccccc", style="filled"];
+
+  "Board" -> "Backlog" [color=red];
+  "Board" -> "Working";
+  "Board" -> "Verify";
+  "Board" -> "Done";
+*/
+
+  "TODO root" -> "Board";
+
+  "Board" -> "Navigation";
+
+  // "Board" -> "Item details";
+  // "[State Collection]" -> "Item details";
+
+  // "Item details" -> "Board";
+  // "Item details" -> "[State Collection]";
+
+  "Item details" -> "Item edit"
+  "Item edit" -> "Item details"
+  "Item edit" -> "Item details" [label=POST]
+
+  "[State Collection]" -> "POST [State Collection]" [label=POST]
+  "Board" -> "POST [State Collection]" [label=POST]
+
+  "POST [State Collection]" -> "[State Collection]" [label=redirect]
+  "POST [State Collection]" -> "Board" [label=redirect]
+/*
+  "Backlog" -> "Working" // [label=Move color=red];
+  "Working" -> "Backlog" // [label=Move color=red];
+  "Working" -> "Verify" // [label=Move color=red];
+  "Verify" -> "Working" // [label=Move color=red];
+  "Verify" -> "Done" // [label=Move color=red];
+  "Done" -> "Working" // [label=Move color=red];
+  */
+  //"Working" -> "Pull" [label=Backlog color=red];
+  //"Done" -> "Pull" [label=Verify color=red];
+}

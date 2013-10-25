@@ -1,0 +1,67 @@
+digraph application {
+  graph [fontname = "Liberation Sans"];
+  edge [fontname = "Liberation Sans", fontsize = 20];
+  node [fontname = "Liberation Sans", fontsize = 30];
+
+/* 
+  "Backlog" [color="#cccccc", style="filled"];
+  "Working" [color="#cccccc", style="filled"];
+  "Verify" [color="#cccccc", style="filled"];
+  "Done" [color="#cccccc", style="filled"];
+
+  "Board" -> "Backlog" [color=red];
+  "Board" -> "Working";
+  "Board" -> "Verify";
+  "Board" -> "Done";
+*/
+
+  "TODO root" -> "Navigation";
+
+  "Board" -> "Navigation";
+  "Backlog" -> "Navigation";
+  "Working" -> "Navigation";
+  "Verify" -> "Navigation";
+  "Done" -> "Navigation";
+
+  "Navigation" -> "Board";
+  "Navigation" -> "Backlog";
+  "Navigation" -> "Working";
+  "Navigation" -> "Verify";
+  "Navigation" -> "Done";
+
+  "Board" -> "Item details";
+  "Backlog" -> "Item details";
+  "Working" -> "Item details";
+  "Verify" -> "Item details";
+  "Done" -> "Item details";
+
+  "Item details" -> "Board";
+  "Item details" -> "Backlog";
+  "Item details" -> "Working";
+  "Item details" -> "Verify";
+  "Item details" -> "Done";
+
+  "Item details" -> "Item edit"
+  "Item edit" -> "Item details"
+  "Item edit" -> "Item details" [label=POST]
+
+  "Item details" -> "POST Working" [label=POST]
+  "Item details" -> "POST Backlog" [label=POST]
+  "Item details" -> "POST Verify" [label=POST]
+  "Item details" -> "POST Done" [label=POST]
+
+  "POST Working" -> "Item details" [label=redirect]
+  "POST Backlog" -> "Item details" [label=redirect]
+  "POST Verify" -> "Item details" [label=redirect]
+  "POST Done" -> "Item details" [label=redirect]
+/*
+  "Backlog" -> "Working" // [label=Move color=red];
+  "Working" -> "Backlog" // [label=Move color=red];
+  "Working" -> "Verify" // [label=Move color=red];
+  "Verify" -> "Working" // [label=Move color=red];
+  "Verify" -> "Done" // [label=Move color=red];
+  "Done" -> "Working" // [label=Move color=red];
+  */
+  //"Working" -> "Pull" [label=Backlog color=red];
+  //"Done" -> "Pull" [label=Verify color=red];
+}
