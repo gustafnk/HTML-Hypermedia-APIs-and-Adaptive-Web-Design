@@ -27,16 +27,10 @@ digraph application {
 */
 
   "Navigation" -> "Board";
-  "Navigation" -> "Backlog";
-  "Navigation" -> "Working";
-  "Navigation" -> "Verify";
-  "Navigation" -> "Done";
+  "Navigation" -> "[State Collection]"
 
   "Board" -> "Item details";
-  "Backlog" -> "Item details";
-  "Working" -> "Item details";
-  "Verify" -> "Item details";
-  "Done" -> "Item details";
+  "[State Collection]" -> "Item details";
 
  /*
   "Item details" -> "Board";
@@ -46,20 +40,15 @@ digraph application {
   "Item details" -> "Done";
 */
 
+
   "Item details" -> "Item edit"
   "Item edit" -> "Item details" [label=redirect]
   "Item edit" -> "Item edit" [label=POST]
 
  
-  "Item details" -> "POST Working" [label=POST]
-  "Item details" -> "POST Backlog" [label=POST]
-  "Item details" -> "POST Verify" [label=POST]
-  "Item details" -> "POST Done" [label=POST]
+  "Item details" -> "POST [State Collection]" [label=POST]
 
-  "POST Working" -> "Item details" [label=redirect]
-  "POST Backlog" -> "Item details" [label=redirect]
-  "POST Verify" -> "Item details" [label=redirect]
-  "POST Done" -> "Item details" [label=redirect]
+  "POST [State Collection]" -> "Item details" [label=redirect]
 /*
   "Backlog" -> "Working";
   "Working" -> "Backlog";

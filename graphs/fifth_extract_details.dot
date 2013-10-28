@@ -16,13 +16,15 @@ digraph application {
 */
 
   _nil            [style="invis"];
-  _nil -> "Board + Navigation"   [label=""];
+  _nil -> "Board"   [label=""];
 
   // "[State Collection]" -> "Board + Navigation";
 
-  "Board + Navigation" -> "[State Collection]";
+  "Board" -> "Navigation"
+  "Navigation" -> "[State Collection]";
 
-  "Board + Navigation" -> "Item details";
+  
+  "Board" -> "Item details";
   "[State Collection]" -> "Item details";
 
   /*
@@ -35,10 +37,10 @@ digraph application {
   "Item edit" -> "Item edit" [label=POST]
 
   "[State Collection]" -> "POST [State Collection]" [label=POST]
-  "Board + Navigation" -> "POST [State Collection]" [label=POST]
+  "Board" -> "POST [State Collection]" [label=POST]
 
   "POST [State Collection]" -> "[State Collection]" [label=redirect]
-  "POST [State Collection]" -> "Board + Navigation" [label=redirect]
+  "POST [State Collection]" -> "Board" [label=redirect]
 /*
   "Backlog" -> "Working" // [label=Move color=red];
   "Working" -> "Backlog" // [label=Move color=red];

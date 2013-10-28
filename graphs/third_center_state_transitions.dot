@@ -15,10 +15,13 @@ digraph application {
   "Board" -> "Done";
 */
 
-  "TODO root" -> "Navigation";
+  _nil            [style="invis"];
+  _nil -> "Navigation"   [label=""];
 
+  /*
   "Board" -> "Navigation";
   "[State Collection]" -> "Navigation";
+  */
 
   "Navigation" -> "Board";
   "Navigation" -> "[State Collection]";
@@ -26,12 +29,14 @@ digraph application {
   "Board" -> "Item details";
   "[State Collection]" -> "Item details";
 
+  /*
   "Item details" -> "Board";
   "Item details" -> "[State Collection]";
+  */
 
   "Item details" -> "Item edit"
-  "Item edit" -> "Item details"
-  "Item edit" -> "Item details" [label=POST]
+  "Item edit" -> "Item details" [label=redirect]
+  "Item edit" -> "Item edit" [label=POST]
 
   "[State Collection]" -> "POST [State Collection]" [label=POST]
   "Board" -> "POST [State Collection]" [label=POST]
