@@ -43,14 +43,23 @@
         </p>
         </section>
 
-        <section>
+        <!-- <section>
         <h2>About me</h2>
         <p>
         <img src="images/me.jpg" style="width: 143px; margin-right: 20px" />
         <img src="images/jayway.png" style="padding: 15px;"/>
         </p>
+        </section> -->
+
+        <section>
+        <h2>Our task</h2>
+        <p>
+        Design an API for a kanban board. <br />The API will have multiple clients.
+        </p>
         </section>
 
+
+<!--
             <section>
             <h2>Books</h2>
             <p>
@@ -62,18 +71,20 @@
             </div>
             </p>
             </section>
-
+-->
 
         <section>
-        <h2>A kanban board</h2>
+        <h2>Kanban board</h2>
         <p><img src="images/workflow.png" /></p>
         </p>
         </section>
 
+<!--
         <section>
         <h2>Without Hypermedia</h2>
         <p><img src="images/why_so_fat_clients.png" /></p>
         </section>
+-->
 
         <section>
         <h2>API</h2>
@@ -195,7 +206,7 @@
         return nextState == nextStates(state).last();
       }
       </code></pre>
-        Many possibilities! This is bad...
+        Many possibilities! 
         </section>
 
 
@@ -215,10 +226,12 @@
         </p>
         </section>
 
+        <!--
         <section>
         <h2>Representations</h2>
-        <p>TODO: This is not a cup</p>
+        <p><img src="http://www.library.yale.edu/librarynews/ceci-n-est-pas-une-pipe.jpg" /></p>
         </section>
+        -->
 
         <!-- <section>
         <div style="margin-top: 50px">
@@ -296,7 +309,7 @@
         <p><img src="graphs/first_design_transitions_from_details.png" /></p>
         </section>
         <section>
-        Simplified
+        Simplified view
         <p><img src="graphs/second_simplify_diagram.png" /></p>
         </section>
         <section>
@@ -315,13 +328,15 @@
         <section>
         <h2>H-factors</h2>
         <p><img src="images/hfactor_big.png" />
-        <a href="">TODO link</a></p>
+        <a href="http://amundsen.com/hypermedia/hfactor/">http://amundsen.com/hypermedia/hfactor/</a></p>
         </section>
         <section>
         <h2>H-factors for our API</h2>
-        <p>links, form POST
+        <p>
         <ul>
-          <li>TODO</li>
+          <li>LO: Support for out-bound navigational links (HTTP GET)</li>
+          <li>LN: Support for non-idempotent updates (HTTP POST)</li>
+          <li>CL: Support for adding semantic meaning to link elements using link relations</li>
         </ul>
         </p>
         </section>
@@ -339,12 +354,12 @@
           <li>JSON-LD</li>
           <li>Atom</li>
           <li>SVG</li>
-          <li>TODO OData?</li>
+          <li>OData</li>
         </ul>
         </section>
         <section>
         <h2></h2>
-        <table style="border-style: solid; border-width: 1px">
+        <table style="font-size: 20px; border-style: solid; border-width: 1px">
           <tr><th>Name</th><th>Summary</th><th>Read/write</th><th>Comment</th></tr>
           <tr>
             <td>HAL</td><td>Resources and relations</td><td>R</td><td>Write support with addon</td>
@@ -425,11 +440,13 @@
           </code></pre>
           </section>
 
+          <!--
           <section>
           <h2>Interlude</h2>
           <p style="margin: 70px 0 50px 0;">JSON is ok :)</p>
           <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
           </section>
+          -->
        
         <section>
         <h2>5. Implementation</h2>
@@ -467,14 +484,14 @@
         </section>
 
         <section>
-        <h2>Generic vs specific client? TODO</h2>
+        <h2>Generic vs specific client?</h2>
         <p>
-        <ul>
+        <!--<ul>
           <li>Representations</li>
           <li>Semantics for "things"</li>
           <li>Link relations (navigation semantics)</li>
           <li>Form relations (process semantics)</li>
-        </ul>
+        </ul>-->
         </p>
         </section>
 
@@ -489,6 +506,15 @@
         </section>
 
         <section>
+        <h2>Use the affordances</h2>
+        <ul>
+          <li>Semantics for "things"</li>
+          <li>Link relations (navigational state)</li>
+          <li>Form relations (server state)</li>
+        </ul>
+        </section>
+        <!--
+        <section>
         <h2>Some advice</h2>
         <p>
         <ul>
@@ -496,15 +522,10 @@
           <li>...this is hard in JSON</li>
           <li>Root URI is the only URI known to the client</li>
           <li>Follow media type spec and give feedback to authors</li>
-          <li>Again, representations</li>
         </ul>
         </p>
         </section>
-
-
-        <section>
-        <h2>Demo: Ruby console client</h2>
-        </section>
+        -->
                      
         <section>
         <h2>Demo: changing the application</h2>
@@ -512,6 +533,10 @@
         <img src="images/workflow_add.png" style="width: 200px; margin: 0 50px;" /></p>
         <!-- change the workflow rules -->
         <!-- add a column -->
+        </section>
+
+        <section>
+        <h2>Demo: Ruby console client</h2>
         </section>
 
         <section>
@@ -523,9 +548,11 @@
         <p></p>
         </section>
 
+        <!--
         <section>
         TODO
         </section>
+        -->
 
         <section>
         <h2>Books</h2>
