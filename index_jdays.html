@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>HTML Hypermedia APIs and Adaptive Web Design</title>
+
+    <meta name="description" content="A presentation about two awesome things, working in harmony">
+    <meta name="author" content="Gustaf Nilsson Kotte">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style>
+    table#json td, table#json th {
+      padding: 20px 20px;
+      border: 1px solid white;
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+        <h2>HTML Hypermedia APIs <br />and <br />Adaptive Web Design</h2>
+        <p>
+        <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
+        </p>
+        </section>
+
+        <section>
+        <h2>About me</h2>
+        <p>
+        <img src="images/me.jpg" style="width: 143px; margin-right: 20px" />
+        <img src="images/jayway.png" style="padding: 15px;"/>
+        </p>
+        </section>
+
+        <!--
+        <section>
+        <h2>Two areas of interest</h2>
+        <ul style="list-style-type: none;">
+          <li> Hypermedia APIs
+          </li>
+          <li>
+          Adaptive Web Design
+        </ul>
+        </section>
+        -->
+
+        <section>
+        <h2>Two areas of interest</h2>
+        <ul style="list-style-type: none; margin-top: 50px">
+          <li> Hypermedia APIs
+          <i> - No application logic in API clients</i>
+          </li>
+          <li>
+          Adaptive Web Design
+          <i> - Multi-device web</i>
+          </li>
+        </ul>
+        <p class="fragment" style="margin: 80px">Working nicely together!</p>
+        </section>
+
+        <section>
+        <h2>Our tasks</h2>
+        <p>
+        <br />
+        API for a kanban board - support for multiple clients<br /><br />
+        Build a kanban board web app 
+        </p>
+        </section>
+
+        <section>
+        <h2>Kanban board</h2>
+        <p><img src="images/workflow.png" /></p>
+        </p>
+        </section>
+
+        <section>
+        <h2>API - First attempt</h2>
+        <pre><code>
+        GET/POST items/
+
+        {
+          id: 123,
+          name: "...",
+          description: "...",
+          status: "backlog|working|verify|done"
+        }
+        </code></pre>
+        </section>
+
+        <section>
+        <h2>Server side: enforce rules</h2>
+        <p>Don't trust clients</p>
+        </section>
+
+        <section>
+        <h2>Client side: user friendly</h2>
+        <p>
+        <ul style="list-style-type: none; margin-top: 50px">
+        <li>Hide non-valid transitions</li>
+        <li>Show primary transitions</li>
+        <li>&nbsp;</li>
+        <li>"Read the specification"</li>
+        </ul></p>
+        </section>
+
+        <section>
+        <img src="images/workflow.png" id="workflow"  style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
+        <h2>Specification</h2>
+        <pre style="width: 700px">
+
+    Implement the state machine on the right.
+
+    The primary action for each state is the
+    "downward" arrow, except for the state
+    "done" where the primary action is
+    to move the item back to the "working" state.
+
+        </pre>
+        </section>
+    
+        <section>
+        <h2>Without Hypermedia</h2>
+        <p><img src="images/why_so_fat_clients.png" /></p>
+        </section>
+
+        <section>
+        <h2>Prefer fat APIs over fat clients</h2>
+        <p><img src="images/workflow.png" style="position: absolute; right: -40px; top: 108px; width: 150px"/><img src="images/fat_api_is_better.png" style="width: 700px"/></p>
+        </section>
+
+        <section data-background="#fff">
+        <p><img src="images/glory_of_rest.png" style="border-width: 0; box-shadow: 0 0 0"/>
+        <small><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
+        </p>
+        </section>
+
+        <section>
+        <h2>Demo, Kanban board</h2>
+        <p>HTML Hypermedia API + Adaptive Web Design
+        <p><img src="images/workflow.png" /></p>
+        </p>
+        </section>
+
+        <section data-background="#fff">
+        <p><img src="images/glory_of_rest.png" style="border-width: 0; box-shadow: 0 0 0"/>
+        <small><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
+        </p>
+        </section>
+
+
+
+        <section>
+        <h2>Hypermedia APIs</h2>
+        <p></p>
+        </section>
+
+        <section>
+        <h2>What is the Hypermedia Constraint?</h2>
+        <div style="margin-top: 100px">
+          <blockquote>You do stuff by reading pages <br />and then either <br />follow links or submit forms.</blockquote>
+          <p style="float: right;">— Jon Moore<br /><br /><br />
+          <img src="images/jon_moore.png" />
+          </p></div>
+          <div>
+            <!-- <small>"do stuff" = use cases</small> -->
+          </div>
+          </section>
+
+          <section>
+        <h2>Evaluate media types</h2>
+        <p></p>
+        </section>
+        <section>
+        <h2>H-factors</h2>
+        <p><img src="images/hfactor_big.png" />
+        <a href="http://amundsen.com/hypermedia/hfactor/">http://amundsen.com/hypermedia/hfactor/</a></p>
+        </section>
+        <section>
+        <h2>H-factors for our API</h2>
+        <p>
+        <ul>
+          <li>LO: Support for out-bound navigational links (HTTP GET)</li>
+          <li>LN: Support for non-idempotent updates (HTTP POST)</li>
+          <li>CL: Support for adding semantic meaning to link elements using link relations</li>
+        </ul>
+        </p>
+        </section>
+
+        <section>
+        <h2>Create or choose media types</h2>
+        <p></p>
+        </section>
+        <section>
+        <ul>
+          <li>HTML</li>
+          <li>HAL</li>
+          <li>Collection+JSON</li>
+          <li>Siren</li>
+          <li>JSON-LD</li>
+          <li>JSON-API TODO</li>
+          <li>Atom</li>
+          <li>SVG</li>
+          <li>OData</li>
+        </ul>
+        </section>
+        <section>
+        <h2></h2>
+        <table id="json" style="padding: 50px;; font-size: 20px;">
+          <tr><th>Name</th><th>Summary</th><th>Read/write</th><th>Comment</th></tr>
+          <tr>
+            <td>HAL</td><td>Resources and relations</td><td>R</td><td>Write support with addon</td>
+          </tr>
+          <tr>
+            <td>Collection+JSON</td><td>Collections over JSON</td><td>RW</td><td></td>
+          </tr>
+          <tr>
+            <td>Siren</td><td>~ JSON port of HTML</td><td>RW</td><td></td>
+          </tr>
+          <tr>
+            <td>JSON-LD</td><td>~ RDF over JSON</td><td>R</td><td></td>
+          </tr>
+          <tr>
+            <td>TODO JSON-API</td><td>TODO</td><td>RW</td><td></td>
+          </tr>
+        </table>
+        </section>
+ 
+
+          <section>
+          <h2>Use HTML for Hypermedia APIs</h2>
+          <ul style="list-style-type: none; margin-top: 100px">
+            <li>Lots of hypermedia controls</li>
+            <li>Old, standardized, everybody knows HTML</li>
+            <li>Good tooling support</li>
+          </ul>
+          <div style="float: right; text-align: right">
+            <img src="images/jon_moore.png" />
+            <small style="float: right;">
+              <a href="https://vimeo.com/20781278">https://vimeo.com/20781278</a>
+              <a href="http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html">http://codeartisan.blogspot.se/2012/07/using-html-as-media-type-for-your-api.html</a>
+              <a href="http://amundsen.com/hypermedia/html/">http://amundsen.com/hypermedia/html/</a>
+          </small></div>
+          </section>
+
+          <section>
+          <h2>More...<!-- good stuff --></h2>
+          <ul style="list-style-type: none; margin: 85px 0">
+            <!-- <li>Browsable API (QA, ops)</li> -->
+            <li>Great for learning about hypermedia!</li>
+            <!-- <li>Microformats 2, RDFa Lite</li> -->
+          </ul>
+          <small>
+            <!-- <a href="http://microformats.org/wiki/microformats-2">http://microformats.org/wiki/microformats-2</a><br /> -->
+            <!-- <a href="http://www.w4.org/TR/rdfa-lite/">http://www.w3.org/TR/rdfa-lite/</a><br />
+            <a href="http://manu.sporny.org/2013/microdata-downward-spiral/">http://manu.sporny.org/2013/microdata-downward-spiral/</a>-->
+          </small>
+          </section>
+
+          <section>
+          <h2>Interlude</h2>
+          <p style="margin: 70px 0 50px 0;">JSON is ok :)</p>
+          <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
+          </section>
+
+          <section>
+          <h2>Example: Microformats2, entities</h2>
+          <pre><code>
+&lt;li class="h-item"&gt;
+  &lt;div class="p-name"&gt;&lt;%= item.name %&gt;&lt;/div&gt;
+  &lt;div class="p-status"&gt;&lt;%= item.status %&gt;&lt;/div&gt;
+  &lt;div class="p-description"&gt;&lt;%= item.description %&gt;&lt;/div&gt;
+  &lt;div class="p-forms"&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div class="p-links"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/li&gt;
+          </code></pre>
+          </section>
+
+          <section>
+          <h2>Example: Microformats2, forms</h2>
+          <pre><code>
+&lt;div class="p-forms"&gt;
+  &lt;form data-rel="move backlog" action="/items/backlog" method="POST"&gt;
+    &lt;input name="id" type="hidden" value="4"&gt;
+    &lt;input title="submit" type="submit" value="Move to backlog"&gt;
+  &lt;/form&gt;
+  &lt;form data-rel="move verify next" action="/items/verify" method="POST"&gt;
+    &lt;input name="id" type="hidden" value="4"&gt;
+    &lt;input title="submit" type="submit" value="Move to verify"&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+          </code></pre>
+          </section>
+
+          <!--<section>
+          <h2>The aesthetics of modernism</h2>
+          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
+            <li>Bricolage (DIY)</li>
+          </ul>
+          Entrepreneur, startups, etc 
+          </section>-->
+
+          <!--
+          <section>
+          <h2>Client support for HTML APIs?</h2>
+          <ul style="list-style-type: none; margin-top: 100px">
+            <li class="fragment">Mixed experiences on mobile devices...</li>
+            <li class="fragment">...but all mobile devices have a web browser!</li>
+          </ul>
+          </section>
+          -->
+
+          <!--
+          <section>
+          <h2>Use the browser for API communication</h2>
+          <ul style="text-align: center; list-style-type: none; margin-top: 100px">
+            <li>Still experimental</li>
+            <li>Good HTTP behavior for free</li>
+          </ul>
+          </section>
+          -->
+
+          <section>
+          <h2>HTML Hypermedia APIs &nbsp;❤&nbsp; Mobile First</h2>
+          <!-- <p style="margin-top: 100px">TODO Usecases picture!</p> -->
+          <!-- also, think about different cache profiles -->
+          </section>
+          
+          <section>
+          <img src="images/not_the_thing2_layer.png" style="width: 700px"/>
+          <small><a href="http://filamentgroup.com/lab/ajax_includes_modular_content/">http://filamentgroup.com/lab/ajax_includes_modular_content/</a></small>
+          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
+          </section>
+
+          <section>
+          <img src="images/not_the_thing1.png" style="width: 500px"/>
+          <small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/</a></small>
+          </section>
+
+          <!-- <section>Do you see it? :)</section> -->
+
+
+          <section>
+          <h2>Adaptive Web Design</h2>
+          <p style="margin: 50px">Responsive web design</p>
+          <p>Feature detection<br />Device APIs<br /> Performance<br />Conditional loading<br />Content strategy<br />Touch<br />Platform optimization<br />Ergonomics<br />...</p>
+          <p style="margin-top: 50px"><small><a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design">http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design</a></small></p>
+          </section>
+
+          <section>
+          <h2>Progressive Enhancement</h2>
+          <div>
+            <!-- <blockquote>An escalator can never break;<br /> it can only become stairs</blockquote>
+            <p style="float: right;">— Mitch Hedberg</p></div>
+          <div style="clear: both" /> -->
+            <img src="images/escalator.jpg" style="width: 400px; margin: 0 auto" />
+            </section>
+
+
+          <section>
+          <h2>The API and the web <br />can be the same thing!</h2>
+          <p style="margin-top: 100px">
+          HTML Hypermedia APIs &nbsp;❤&nbsp; Mobile First<br /><br /> 
+          Mobile First &nbsp;❤&nbsp; all web browsers and devices
+          </p>
+          </section>
+
+          <section>
+          <h2>The API and the web <br />can be the same thing!</h2>
+          <p style="margin-top: 100px">HTML Hypermedia APIs <br /> ❤ <br /> Adaptive Web Design </p>
+          </section>
+
+            <section>
+            <h2>HTML Hypermedia APIs + AWD</h2>
+            <p></p>
+            </section>
+
+           <!-- 
+            <section>
+            <h2>First, an exit strategy</h2>
+            <p><img src="images/exit.png" /></p>
+            <p>www.example.com<br />api.example.com</p>
+            </section>
+            -->
+
+            <section>
+            <h2>High level view</h2>
+            <ul style="list-style-type: none; line-height: 2em">
+              <li class="fragment">Same code for web and API</li>
+              <li class="fragment">...yes, they share templates too</li>
+              <li class="fragment">Separate URLs</i>
+            <!-- <li class="fragment">Optimize response size and #roundtrips</li> -->
+            <!-- <li class="fragment">Microformats2 <span style="font-size: 0.5em">or RDFa [Lite]</span></li> -->
+              <!-- <li class="fragment">Agressive enhancement</li>
+              <li class="fragment">Other AWD techniques :)</li>-->
+              <li class="fragment">Optimize for both perspectives</li>
+            </ul>
+            </section>
+
+            
+            <section>
+            <h2>Demo: changing the application</h2>
+            <p><img src="images/workflow.png" style="width: 200px; margin: 0 50px" />
+            <img src="images/workflow_add.png" style="width: 200px; margin: 0 50px;" /></p>
+            <!-- change the workflow rules -->
+            <!-- add a column -->
+            </section>
+            <!--
+            <section>
+            <h2>Workflow definition</h2>
+          <pre><code>
+            class Item
+              def next_states
+                case self.status
+                when 'backlog'
+                  ['working']
+                when 'working'
+                  ['backlog', 'verify']
+                when 'verify'
+                  ['working', 'done']
+                when 'done'
+                  ['working']
+                end
+              end
+            end
+          </code></pre>
+          <img src="images/workflow.png" style="height: 250px"/>
+          </section>
+          -->
+
+            <section>
+            <h2>Summary</h2>
+            <p></p>
+            </section>
+
+            <section>
+            <!-- <h2>Two areas of interest</h2>-->
+            <p style="margin: 80px">HTML Hypermedia APIs ❤ Mobile First<br /><br />
+            Mobile First &nbsp;❤&nbsp; all web browsers and devices</p>
+            </section>
+
+          <section>
+          <p>HTML Hypermedia APIs <br /> ❤ <br /> Adaptive Web Design </p>
+          </section>
+
+
+            <section>
+            <h2>Further exploration, books</h2>
+            <p>
+            <div style="margin: 30px">
+              <small><a href="https://twitter.com/mamund">Mike Amundsen</a>, <a href="http://www.amazon.com/Building-Hypermedia-APIs-HTML5-Node/dp/1449306578">Building Hypermedia APIs<br /> with HTML5 and Node</a></small>
+            </div>
+            <!-- <div style="margin: 30px">
+              <small><a href="https://twitter.com/mamund">Mike Amundsen</a> and <a href="https://twitter.com/TODO">Richardson</a>, <a href="#">New Web API book, TODO</a></small>
+            </div> -->
+            <div style="margin: 30px">
+              <small><a href="https://twitter.com/steveklabnik">Steve Klabnik</a>, <a href="http://www.designinghypermediaapis.com/">Designing Hypermedia APIs</a></small>
+            </div>
+            <div style="margin: 30px">
+              <small><a href="https://twitter.com/AaronGustafson">Aaron Gustafson</a>, <a href="http://easy-readers.net/books/adaptive-web-design/">Adaptive Web Design</a></small>
+            </div>
+            </p>
+            </section>
+
+            <section>
+            <h2>Further exploration, online</h2>
+            <p>
+            <div style="margin: 30px">
+              <small><a href="https://twitter.com/brad_frost/">Brad Frost</a>, <a href="http://bradfrostweb.com/blog/mobile/beyond-media-queries-anatomy-of-an-adaptive-web-design/">Beyond Media Queries: <br />Anatomy of an Adaptive Web Design</a></small>
+            </div>
+            <div style="margin: 30px">
+              <small><a href="https://twitter.com/slicknet">Nicolas Zakas</a>, <a href="http://www.youtube.com/watch?v=hdTxeR90_1E">Progressive Enhancement 2.0</a></small>
+            </div>
+            <div style="margin: 30px">
+              <small><a href="https://twitter.com/stilkov">Stefan Tilkov</a> (et al), <a href="http://roca-style.org/">Resource-oriented Client Architecture</a></small>
+            </div>
+            </p>
+            </section>
+
+            <section>
+            <h1>Thank you!</h1>
+            <p>
+            <small>Gustaf Nilsson Kotte / <a href="http://twitter.com/gustaf_nk">@gustaf_nk</a></small>
+            </p>
+            <p style="margin-top: 40px"><small>Code: <a href="https://github.com/gustafnk/kanban-awd-api">https://github.com/gustafnk/kanban-awd-api</a></small></p>
+            <p><small>Demo: <a href="http://kanban-awd.herokuapp.com">http://kanban-awd.herokuapp.com/</a> and <a href="http://kanban-api.herokuapp.com/">http://kanban-api.herokuapp.com</a></small></p>
+            <p><small>Slides: <a href="http://www.slideshare.net/GustafKotte/h-27102096">http://www.slideshare.net/GustafKotte/h-27102096</a></small></p>
+            </section>
+
+          </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+          // Full list of configuration options available here:
+          // https://github.com/Hakimel/reveal.js#configuration
+          Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: 'none' || Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'plugin/leap/leap.js', async: true }
+            // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+          });
+
+        </script>
+
+      </body>
+    </html>
