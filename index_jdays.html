@@ -85,19 +85,12 @@
         </section>
 
         <section>
-        <h2>Our tasks</h2>
-        <p>
-        <br />
-        API for a kanban board - support for multiple clients<br /><br />
-        Build a kanban board web app 
-        </p>
-        </section>
-
-        <section>
-        <h2>Kanban board</h2>
+        <h2>Demo, Kanban board</h2>
+        <p>HTML Hypermedia API + Adaptive Web Design
         <p><img src="images/workflow.png" /></p>
         </p>
         </section>
+
 
         <section>
         <h2>API - First attempt</h2>
@@ -129,6 +122,7 @@
         </ul></p>
         </section>
 
+<!--
         <section>
         <img src="images/workflow.png" id="workflow"  style="position: absolute; right: -40px; top: -120px; width: 150px;"/>
         <h2>Specification</h2>
@@ -143,7 +137,7 @@
 
         </pre>
         </section>
-    
+        -->
         <section>
         <h2>Without Hypermedia</h2>
         <p><img src="images/why_so_fat_clients.png" /></p>
@@ -159,20 +153,6 @@
         <small><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
         </p>
         </section>
-
-        <section>
-        <h2>Demo, Kanban board</h2>
-        <p>HTML Hypermedia API + Adaptive Web Design
-        <p><img src="images/workflow.png" /></p>
-        </p>
-        </section>
-
-        <section data-background="#fff">
-        <p><img src="images/glory_of_rest.png" style="border-width: 0; box-shadow: 0 0 0"/>
-        <small><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
-        </p>
-        </section>
-
 
 
         <section>
@@ -192,10 +172,11 @@
           </div>
           </section>
 
-          <section>
+        <!--  <section>
         <h2>Evaluate media types</h2>
         <p></p>
-        </section>
+        </section> -->
+        <!--
         <section>
         <h2>H-factors</h2>
         <p><img src="images/hfactor_big.png" />
@@ -211,7 +192,8 @@
         </ul>
         </p>
         </section>
-
+        -->
+        <!--
         <section>
         <h2>Create or choose media types</h2>
         <p></p>
@@ -223,36 +205,13 @@
           <li>Collection+JSON</li>
           <li>Siren</li>
           <li>JSON-LD</li>
-          <li>JSON-API TODO</li>
+          <li>JSON-API</li>
           <li>Atom</li>
-          <li>SVG</li>
           <li>OData</li>
         </ul>
         </section>
+        -->
         <section>
-        <h2></h2>
-        <table id="json" style="padding: 50px;; font-size: 20px;">
-          <tr><th>Name</th><th>Summary</th><th>Read/write</th><th>Comment</th></tr>
-          <tr>
-            <td>HAL</td><td>Resources and relations</td><td>R</td><td>Write support with addon</td>
-          </tr>
-          <tr>
-            <td>Collection+JSON</td><td>Collections over JSON</td><td>RW</td><td></td>
-          </tr>
-          <tr>
-            <td>Siren</td><td>~ JSON port of HTML</td><td>RW</td><td></td>
-          </tr>
-          <tr>
-            <td>JSON-LD</td><td>~ RDF over JSON</td><td>R</td><td></td>
-          </tr>
-          <tr>
-            <td>TODO JSON-API</td><td>TODO</td><td>RW</td><td></td>
-          </tr>
-        </table>
-        </section>
- 
-
-          <section>
           <h2>Use HTML for Hypermedia APIs</h2>
           <ul style="list-style-type: none; margin-top: 100px">
             <li>Lots of hypermedia controls</li>
@@ -285,9 +244,25 @@
           <section>
           <h2>Interlude</h2>
           <p style="margin: 70px 0 50px 0;">JSON is ok :)</p>
-          <p><small>Also, hypermedia is a bit harder to consume in general</small></p>
+          <!--<p><small>Also, hypermedia is a bit harder to consume in general</small></p>-->
           </section>
 
+          <section>
+          <h2>Example: non-semantic HTML</h2>
+          <pre><code>
+&lt;li&gt;
+  &lt;div&gt;&lt;%= item.name %&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;%= item.status %&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;%= item.description %&gt;&lt;/div&gt;
+  &lt;div&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div&gt;
+    ...
+  &lt;/div&gt;
+&lt;/li&gt;
+          </code></pre>
+          </section>
           <section>
           <h2>Example: Microformats2, entities</h2>
           <pre><code>
@@ -304,6 +279,7 @@
 &lt;/li&gt;
           </code></pre>
           </section>
+
 
           <section>
           <h2>Example: Microformats2, forms</h2>
@@ -348,6 +324,25 @@
           </ul>
           </section>
           -->
+
+          <section>
+          <h2>Hypermedia APIs</h2>
+          <ul>
+            <li>Expose use cases</li>
+            <li>Maximize user percieved value per request (size)</li>
+            <li>Avoid "chatty" interactions (latency)</li>
+          </ul>
+          </section>
+
+          <section>
+          <h2>Mobile first</h2>
+          <ul>
+            <li>Expose use cases</li>
+            <li>Maximize user percieved value per request (size)</li>
+            <li>Avoid "chatty" interactions (latency)</li>
+          </ul>
+          </section>
+
 
           <section>
           <h2>HTML Hypermedia APIs &nbsp;❤&nbsp; Mobile First</h2>
@@ -513,7 +508,7 @@
             </p>
             <p style="margin-top: 40px"><small>Code: <a href="https://github.com/gustafnk/kanban-awd-api">https://github.com/gustafnk/kanban-awd-api</a></small></p>
             <p><small>Demo: <a href="http://kanban-awd.herokuapp.com">http://kanban-awd.herokuapp.com/</a> and <a href="http://kanban-api.herokuapp.com/">http://kanban-api.herokuapp.com</a></small></p>
-            <p><small>Slides: <a href="http://www.slideshare.net/GustafKotte/h-27102096">http://www.slideshare.net/GustafKotte/h-27102096</a></small></p>
+            <p><small>Slides: <a href="http://www.slideshare.net/GustafKotte/html-hypermedia-apis-and-adaptive-web-design-j">http://www.slideshare.net/GustafKotte/html-hypermedia-apis-and-adaptive-web-design-j</a></small></p>
             </section>
 
           </div>
